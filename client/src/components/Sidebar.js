@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import {
-  LayoutDashboard, CheckSquare, BarChart2, Calendar,
-  Users, Settings, Zap, ShieldCheck, LogOut
+  LayoutDashboard, CheckSquare, Calendar,
+  Users, Settings, ChevronLeft, ChevronRight, Zap, ShieldCheck, LogOut
 } from 'lucide-react';
 
 const NAV_ITEMS = [
