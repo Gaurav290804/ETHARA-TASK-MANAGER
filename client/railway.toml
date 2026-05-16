@@ -3,8 +3,4 @@ command = "npm run build"
 
 [deploy]
 startCommand = "node server.js"
-internalPort = 3000
-
-[environment]
-PORT = "3000"
-REACT_APP_API_URL = ""
+internalPort = 8080
