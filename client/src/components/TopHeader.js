@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-
+import { Bell, Sun, Moon, User, LogOut, ChevronDown, Menu } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext';
 import { useNavigate } from 'react-router-dom';
@@ -30,11 +30,11 @@ function ThemeToggle() {
         <AnimatePresence mode="wait">
           {isDark ? (
             <motion.span key="moon" initial={{ opacity: 0, rotate: -90 }} animate={{ opacity: 1, rotate: 0 }} exit={{ opacity: 0, rotate: 90 }}>
-              <Moon size={12} className="text-primary-t" />
+              <Moon size={12} className="text-white" />
             </motion.span>
           ) : (
             <motion.span key="sun" initial={{ opacity: 0, rotate: 90 }} animate={{ opacity: 1, rotate: 0 }} exit={{ opacity: 0, rotate: -90 }}>
-              <Sun size={12} className="text-primary-t" />
+              <Sun size={12} className="text-white" />
             </motion.span>
           )}
         </AnimatePresence>
@@ -43,7 +43,7 @@ function ThemeToggle() {
   );
 }
 
-function NotifDropdown({ onClose }) {
+function NotifDropdown() {
   return (
     <motion.div
       initial={{ opacity: 0, y: 8, scale: 0.96 }}
@@ -75,14 +75,10 @@ function ProfileDropdown({ user, onLogout, onClose, navigate }) {
         <div className="text-[11px] text-secondary-t">{user?.email}</div>
       </div>
       <div className="p-1.5">
-        {[
-          { icon: User, label: 'Profile', href: '/settings' },
-        ].map(({ icon: Icon, label, href }) => (
-          <button key={label} onClick={() => { navigate(href); onClose(); }}
-            className="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-[13px] text-muted-t hover:text-primary-t hover:bg-hover transition-all duration-200">
-            <Icon size={14} /> {label}
-          </button>
-        ))}
+        <button onClick={() => { navigate('/settings'); onClose(); }}
+          className="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-[13px] text-muted-t hover:text-primary-t hover:bg-hover transition-all duration-200">
+          <User size={14} /> Profile
+        </button>
         <div className="my-1 border-t border-theme" />
         <button onClick={onLogout}
           className="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-[13px] text-red-400 hover:text-red-300 hover:bg-red-500/10 transition-all duration-200">
@@ -96,7 +92,6 @@ function ProfileDropdown({ user, onLogout, onClose, navigate }) {
 export default function TopHeader({ onToggleSidebar }) {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
-  const [search, setSearch] = useState('');
   const [notifOpen, setNotifOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
   const notifRef = useRef(null);
@@ -141,7 +136,7 @@ export default function TopHeader({ onToggleSidebar }) {
             <Bell size={17} />
           </motion.button>
           <AnimatePresence>
-            {notifOpen && <NotifDropdown onClose={() => setNotifOpen(false)} />}
+            {notifOpen && <NotifDropdown />}
           </AnimatePresence>
         </div>
 
