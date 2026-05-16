@@ -1,6 +1,10 @@
 [build]
 command = "npm run build"
-publish = "build"
+
+[deploy]
+startCommand = "npm run serve"
+healthcheckPath = "/"
+healthcheckTimeout = 100
 
 [environment]
 # This should be set in the Railway dashboard to your backend URL
