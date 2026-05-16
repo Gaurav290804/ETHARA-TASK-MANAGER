@@ -2,8 +2,9 @@
 command = "npm run build"
 
 [deploy]
-startCommand = "npm start"
+startCommand = "node server.js"
+internalPort = 3000
 
 [environment]
-# Set in Railway dashboard
+PORT = "3000"
 REACT_APP_API_URL = ""
