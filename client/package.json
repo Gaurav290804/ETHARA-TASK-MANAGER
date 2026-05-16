@@ -31,11 +31,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "serve -s build -l 0.0.0.0:$PORT",
+    "start": "serve -s build -p $PORT",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
-    "serve": "serve -s build -l 0.0.0.0:$PORT",
+    "serve": "serve -s build -p $PORT",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
