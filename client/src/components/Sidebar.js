@@ -4,7 +4,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import {
   LayoutDashboard, CheckSquare, BarChart2, Calendar,
-  Users, Settings, ChevronLeft, ChevronRight, Zap, ShieldCheck, LogOut
+  Users, Settings, Zap, ShieldCheck, LogOut
 } from 'lucide-react';
 
 const NAV_ITEMS = [
