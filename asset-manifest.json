@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ETHARA-TASK-MANAGER/static/css/main.2d0f9528.css",
+    "main.js": "/ETHARA-TASK-MANAGER/static/js/main.65199741.js",
+    "index.html": "/ETHARA-TASK-MANAGER/index.html",
+    "main.2d0f9528.css.map": "/ETHARA-TASK-MANAGER/static/css/main.2d0f9528.css.map",
+    "main.65199741.js.map": "/ETHARA-TASK-MANAGER/static/js/main.65199741.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2d0f9528.css",
+    "static/js/main.65199741.js"
+  ]
+}
