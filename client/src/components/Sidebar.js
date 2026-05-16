@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import {
   LayoutDashboard, CheckSquare, Calendar,
@@ -32,21 +32,23 @@ export default function Sidebar({ collapsed, onToggle }) {
     >
       {/* Logo */}
       <div className="flex items-center gap-3 px-4 h-[70px] border-b border-theme overflow-hidden">
-        <motion.div
-          whileHover={{ rotate: 10, scale: 1.1 }}
-          className="flex items-center justify-center w-8 h-8 rounded-xl flex-shrink-0"
-          style={{ background: 'linear-gradient(135deg, #8b5cf6, #6366f1)', boxShadow: '0 4px 14px rgba(139,92,246,0.4)' }}
-        >
-          <Zap size={16} className="text-primary-t" />
-        </motion.div>
-        <motion.span
-          animate={{ opacity: collapsed ? 0 : 1, width: collapsed ? 0 : 'auto' }}
-          transition={{ duration: 0.2 }}
-          className="font-bold text-[15px] whitespace-nowrap overflow-hidden"
-          style={{ background: 'linear-gradient(135deg, #8b5cf6, #6366f1, #06b6d4)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
-        >
-          TaskFlow
-        </motion.span>
+        <Link to="/dashboard" className="flex items-center gap-3 outline-none">
+          <motion.div
+            whileHover={{ rotate: 10, scale: 1.1 }}
+            className="flex items-center justify-center w-8 h-8 rounded-xl flex-shrink-0"
+            style={{ background: 'linear-gradient(135deg, #8b5cf6, #6366f1)', boxShadow: '0 4px 14px rgba(139,92,246,0.4)' }}
+          >
+            <Zap size={16} className="text-primary-t" />
+          </motion.div>
+          <motion.span
+            animate={{ opacity: collapsed ? 0 : 1, width: collapsed ? 0 : 'auto' }}
+            transition={{ duration: 0.2 }}
+            className="font-bold text-[15px] whitespace-nowrap overflow-hidden"
+            style={{ background: 'linear-gradient(135deg, #8b5cf6, #6366f1, #06b6d4)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+          >
+            TaskFlow
+          </motion.span>
+        </Link>
       </div>
 
       {/* Navigation */}
