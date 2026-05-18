@@ -198,27 +198,7 @@ export default function LoginPage() {
               </motion.button>
             </form>
 
-            {/* Divider */}
-            <div className="flex items-center gap-3">
-              <div className="flex-1 h-px" style={{ background: 'rgba(255,255,255,0.06)' }} />
-              <span className="text-[11px] text-muted-t">or continue with</span>
-              <div className="flex-1 h-px" style={{ background: 'rgba(255,255,255,0.06)' }} />
-            </div>
 
-            {/* OAuth buttons */}
-            <div className="grid grid-cols-2 gap-3">
-              {[
-                { label: 'Google', icon: 'G', color: '#ea4335' },
-                { label: 'GitHub', icon: '⌥', color: '#fff' },
-              ].map(({ label, icon, color }) => (
-                <motion.button key={label} whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
-                  onClick={() => toast('OAuth not configured yet', { icon: 'ℹ️' })}
-                  className="flex items-center justify-center gap-2 py-2.5 rounded-xl text-[13px] font-medium text-secondary-t border transition-all duration-200 hover:bg-hover"
-                  style={{ borderColor: 'rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.03)' }}>
-                  <span style={{ color, fontWeight: 800 }}>{icon}</span> {label}
-                </motion.button>
-              ))}
-            </div>
           </motion.div>
 
           <p className="text-center text-[13px] text-muted-t mt-5">
